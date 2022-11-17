@@ -1,9 +1,9 @@
 .386
 .model flat, stdcall
 .STACK 4096
-exitprocess proto, dWordexitCode : dword
+ExitProcess proto, dWordexitCode : dword
 .DATA
-	mynum DWORD 7
+	mynum DWORD 2
 	mynum_factorial DWORD 0
 	mynum_flags DWORD 0
 	factorial_save DWORD 0
@@ -148,5 +148,5 @@ main proc
 	
 main endp
 move_exit:
-		mov eax,0
+	invoke ExitProcess, 0		;program finished, good spot for break
 end main 
